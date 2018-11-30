@@ -18,7 +18,7 @@
     geometry.scale(-1, 1, 1);
 
     const texture = new THREE.TextureLoader().load(
-      // デプロイの際はURLを変更
+      // ローカル、デプロイでURLを変更
       // "/images/car.jpg"
       "/assignment-hi/images/car.jpg"
     );
@@ -67,7 +67,6 @@
     controls = new THREE.DeviceOrientationControls(camera, true);
     controls.connect();
     controls.update();
-    controls.rotateSpeed = 2;
     window.removeEventListener("deviceorientation", setOrientationControls, true);
   }
 
@@ -83,7 +82,7 @@
 
     controls.enableDamping = true;
 
-    // 視点操作(+にすると逆回転になる)
+    // 視点変更(+にすると逆回転になる)
     controls.rotateSpeed = -0.07;
     // ズーム機能
     controls.enableZoom = false;
