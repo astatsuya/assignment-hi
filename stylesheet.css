@@ -4,6 +4,7 @@ body {
   margin: 0 auto;
   font-family: sans-serif;
   border: thin solid;
+  cursor: pointer;
 }
 
 a {
