@@ -22,7 +22,8 @@
     geometry.scale(-1, 1, 1);
 
     const texture = new THREE.TextureLoader().load(
-      "/assignment-hi/images/car.jpg"
+      // デプロイの際は画像リンクを変更
+      "/images/car.jpg"
     );
 
     const material = new THREE.MeshBasicMaterial({ map: texture});
@@ -61,7 +62,7 @@
   }
 
   const setOrbitControls = () => {
-    // パソコン閲覧時マウスドラッグで視点操作する
+    // android, ios以外のデバイスでマウスドラッグで視点操作する
     const htmlelm = document.getElementById("adv-image")
     controls = new THREE.OrbitControls(camera, htmlelm);
     controls.target.set(
@@ -77,14 +78,14 @@
     // ズーム機能
     controls.enableZoom = false;
 
-    // 表示アングル最大値の調整
+    // 表示する垂直アングル最大値の調整
     controls.maxPolarAngle = 2.60;
     controls.minPolarAngle = 0.50 ;
   }
 
   // ジャイロセンサーで視点変更する
   const setOrientationControls = (e) => {
-    // android, ios以外では無効
+    // android, ios以外では無効にする
     if (!e.alpha) {
       return;
     }
