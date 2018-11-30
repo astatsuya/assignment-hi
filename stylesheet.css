@@ -1,0 +1,36 @@
+body {
+  width: 300px;
+  height: 250px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  border: thin solid;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-contents {
+  width: 300px;
+  height: 80px;
+  background-image: url("./images/logo.jpg");
+}
+
+.bottom-contents {
+  width: 300px;
+  height: 170px;
+  vertical-align: baseline;
+}
+
+.notice {
+   color: rgb(255, 255, 255);
+   font-size:10px;
+   text-align:right;
+   position: relative;
+   top: -23px;
+}
+
+/* canvas {
+  width: 20%;
+  height: 100%;
+} */
