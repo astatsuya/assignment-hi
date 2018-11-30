@@ -22,7 +22,7 @@
     geometry.scale(-1, 1, 1);
 
     const texture = new THREE.TextureLoader().load(
-      "/images/car.jpg"
+      "/assignment-hi/images/car.jpg"
     );
 
     const material = new THREE.MeshBasicMaterial({ map: texture});
