@@ -3,7 +3,7 @@
 <h3>
   初期設定
 </h3>
-ローカル環境で起動する場合には下記二箇所の変更が必要な場合がある
+  下記二箇所の変更が必要な場合がある。(現在GitHub pagesで表示できるように設定)
 <br>
 ・コンテンツをクリックした際のリンク先URL(index.html:15)
 <br>
@@ -27,6 +27,9 @@ js/main.js:92,93 で変更可能。
 <h3>
   外部ライブラリ
 </h3>
+<p>
+  360度画像のコントロールに<a href="https://threejs.org/" target="_blank">three.js</a>を使用。
+</p>
 js/three/three.min.js 3D画像をコントロールする
 <br>
 js/three/OrbitControls.js 3D画像をマウスドラッグでコントロールする
