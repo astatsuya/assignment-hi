@@ -2,10 +2,6 @@
   const clickAdv = document.getElementById('clickAdv');
   const message = document.getElementById('message');
 
-    clickAdv.addEventListener('click', () => {
-      window.open('https://sample.smartcanvas.net/index.pkg.html?user=8&app=91881&type=DM-1_1&no_send=true', '_blank');
-    });
-
   let element, scene, camera, renderer, controls;
 
   const init = () => {
@@ -22,8 +18,9 @@
     geometry.scale(-1, 1, 1);
 
     const texture = new THREE.TextureLoader().load(
-      // デプロイの際は画像リンクを変更
-      "/assignment-hi/images/car.jpg"
+      // デプロイの際はURLを変更
+      "/images/car.jpg"
+      // "/assignment-hi/images/car.jpg"
     );
 
     const material = new THREE.MeshBasicMaterial({ map: texture});
@@ -61,6 +58,19 @@
     render();
   }
 
+  // ジャイロセンサーで視点変更する
+  const setOrientationControls = (e) => {
+    // android, ios以外では無効にする
+    if (!e.alpha) {
+      return;
+    }
+    controls = new THREE.DeviceOrientationControls(camera, true);
+    controls.connect();
+    controls.update();
+    controls.rotateSpeed = -0.07;
+    window.removeEventListener("deviceorientation", setOrientationControls, true);
+  }
+
   const setOrbitControls = () => {
     // android, ios以外のデバイスでマウスドラッグで視点操作する
     const htmlelm = document.getElementById("adv-image")
@@ -81,18 +91,6 @@
     // 表示する垂直アングル最大値の調整
     controls.maxPolarAngle = 2.60;
     controls.minPolarAngle = 0.50 ;
-  }
-
-  // ジャイロセンサーで視点変更する
-  const setOrientationControls = (e) => {
-    // android, ios以外では無効にする
-    if (!e.alpha) {
-      return;
-    }
-    controls = new THREE.DeviceOrientationControls(camera, true);
-    controls.connect();
-    controls.update();
-    window.removeEventListener("deviceorientation", setOrientationControls, true);
   }
 
   const render = () => {
