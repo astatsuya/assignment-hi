@@ -67,7 +67,7 @@
     controls = new THREE.DeviceOrientationControls(camera, true);
     controls.connect();
     controls.update();
-    controls.rotateSpeed = -0.07;
+    controls.rotateSpeed = 2;
     window.removeEventListener("deviceorientation", setOrientationControls, true);
   }
 
