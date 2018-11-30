@@ -23,15 +23,10 @@ a {
   vertical-align: baseline;
 }
 
-.notice {
+#message {
    color: rgb(255, 255, 255);
    font-size:10px;
    text-align:right;
    position: relative;
    top: -23px;
 }
-
-/* canvas {
-  width: 20%;
-  height: 100%;
-} */
