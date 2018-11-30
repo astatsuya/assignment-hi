@@ -23,7 +23,7 @@
 
     const texture = new THREE.TextureLoader().load(
       // デプロイの際は画像リンクを変更
-      "/images/car.jpg"
+      "/assignment-hi/images/car.jpg"
     );
 
     const material = new THREE.MeshBasicMaterial({ map: texture});
